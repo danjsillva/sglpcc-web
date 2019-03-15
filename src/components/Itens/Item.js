@@ -41,7 +41,7 @@ export default function Item(props) {
         {showAvisos && item.preco <= item.preco_avg && (
           <div className="message is-small is-success">
             <div className="message-body">
-              O valor deste item está {(100 - (item.preco * 100 / item.preco_avg)).toFixed(1)}% abaixo do preço médio praticado: <Currency quantity={item.preco_avg} currency="BRL" />
+              O preço deste item está {(100 - (item.preco * 100 / item.preco_avg)).toFixed(1)}% abaixo do preço médio praticado: <Currency quantity={item.preco_avg} currency="BRL" />
             </div>
           </div>
         )}
@@ -49,7 +49,7 @@ export default function Item(props) {
         {showAvisos && item.preco >= item.preco_avg && item.preco < item.preco_avg + (item.preco_avg * porcentagemMargem / 100) && (
           <div className="message is-small is-success">
             <div className="message-body">
-              O valor deste item está {(-100 + (item.preco * 100 / item.preco_avg)).toFixed(1)}% acima do preço médio praticado: <Currency quantity={item.preco_avg} currency="BRL" />
+              O preço deste item está {(-100 + (item.preco * 100 / item.preco_avg)).toFixed(1)}% acima do preço médio praticado: <Currency quantity={item.preco_avg} currency="BRL" />
             </div>
           </div>
         )}
@@ -57,7 +57,7 @@ export default function Item(props) {
         {showAvisos && item.preco > item.preco_avg + (item.preco_avg * porcentagemMargem / 100) && (
           <div className="message is-small is-danger">
             <div className="message-body">
-              O valor deste item está {(-100 + (item.preco * 100 / item.preco_avg)).toFixed(1)}% acima do preço médio praticado: <Currency quantity={item.preco_avg} currency="BRL" />
+              O preço deste item está {(-100 + (item.preco * 100 / item.preco_avg)).toFixed(1)}% acima do preço médio praticado: <Currency quantity={item.preco_avg} currency="BRL" />
             </div>
           </div>
         )}
