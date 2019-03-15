@@ -49,16 +49,16 @@ export default class Itens extends Component {
     return (
       <div>
         <div className="columns">
-          <div className="column is-4">
+          <div className="column is-3">
             <FiltroDetalhes showPorcentagemMargem={false} onFiltroFormSubmit={this.handleFiltroFormSubmit} />
           </div>
 
-          <div className="column is-8">
+          <div className="column is-9">
             <h4 className="title is-4">Detalhes do material</h4>
 
             <span className="title is-6">{material.descricao} ({material.unidade})</span><br />
 
-            <div className="tags">
+            <div className="tags" style={{marginTop: 5}}>
               <span className="tag">Material</span>
               <span className="tag">312673872613</span>
               <span className="tag is-success">Sustentável</span>

@@ -50,11 +50,11 @@ export default class Itens extends Component {
     return (
       <div>
         <div className="columns">
-          <div className="column is-4">
+          <div className="column is-3">
             <FiltroDetalhes showPorcentagemMargem={true} onFiltroFormSubmit={this.handleFiltroFormSubmit} />
           </div>
 
-          <div className="column is-8">
+          <div className="column is-9">
             <button className="button is-small is-pulled-right" onClick={() => this.setState({ showAvisos: !showAvisos })}>
               <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
             </button>

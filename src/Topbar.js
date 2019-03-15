@@ -7,11 +7,11 @@ export default class Topbar extends Component {
       <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
-            <span className="navbar-item">
+            {/* <span className="navbar-item">
               <span className="title has-text-white is-3">
                 <i className="fa fa-search-dollar"></i>
               </span>
-            </span>
+            </span> */}
             <span className="navbar-item">
               {/* <img src="https://bulma.io/images/bulma-logo.png" alt="logo" width="112" height="28" /> */}
               <span className="title is-6 has-text-white">Sistema de Gestão em Licitações Públicas
@@ -34,9 +34,7 @@ export default class Topbar extends Component {
 
             <div className="navbar-end">
               <div className="navbar-item">
-                <div className="buttons">
-                  <button type="button" className="button is-light"> Log in </button>
-                </div>
+                <a href="https://github.com/danjsillva" target="_blank" className="link has-text-white"><i class="fa fa-code"></i> Contribua com o projeto no GitHub</a>
               </div>
             </div>
           </div></div>
