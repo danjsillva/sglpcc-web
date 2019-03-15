@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Select from 'react-select';
 
-import API from '../../config/api'
-import estados from '../../assets/estados'
+import API from '../config/api'
+import estados from '../assets/estados'
 
 export default class FiltroDetalhes extends Component {
   state = {

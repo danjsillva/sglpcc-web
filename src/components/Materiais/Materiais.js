@@ -3,7 +3,7 @@ import Currency from 'react-currency-formatter';
 
 import API from '../../config/api'
 
-import FiltroDetalhes from './FiltroDetalhes'
+import FiltroDetalhes from '../FiltroDetalhes'
 
 export default class Itens extends Component {
   state = {

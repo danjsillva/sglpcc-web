@@ -2,11 +2,26 @@ import React, { Component } from 'react'
 
 import API from '../../config/api'
 
+import FiltroDetalhes from '../FiltroDetalhes'
 import Licitacao from './Licitacao'
 
 export default class Licitacoes extends Component {
   state = {
-    licitacoes: []
+    licitacoes: [],
+    params: {
+      margem: 10,
+      licitacao: {
+        data: ["2019-03-01", "2019-03-05"]
+      },
+      unidade: {
+        id: [],
+        uf: []
+      },
+      fornecedor: {
+        id: [],
+        uf: []
+      }
+    },
   }
 
   componentDidMount() {
@@ -15,12 +30,17 @@ export default class Licitacoes extends Component {
 
   fetchLicitacoes = async () => {
     try {
-      let licitacoes = (await API.get(`/licitacoes/0/0/0`)).data
+      let licitacoes = (await API.post(`/licitacoes`, this.state.params)).data
 
       this.setState({ licitacoes })
     } catch (error) {
 
     }
+  }
+
+  handleFiltroFormSubmit = async (params) => {
+    this.setState({ params })
+    this.fetchLicitacoes()
   }
 
   render() {
@@ -29,7 +49,9 @@ export default class Licitacoes extends Component {
     return (
       <div>
         <div className="columns">
-          <div className="column is-3">Filtros</div>
+          <div className="column is-3">
+            <FiltroDetalhes showPorcentagemMargem={false} onFiltroFormSubmit={this.handleFiltroFormSubmit} />
+          </div>
           <div className="column is-9">
             <button className="button is-small is-pulled-right">
               <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos

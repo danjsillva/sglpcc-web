@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import API from '../../config/api'
 
-import FiltroDetalhes from '../Materiais/FiltroDetalhes'
+import FiltroDetalhes from '../FiltroDetalhes'
 import Item from './Item'
 
 export default class Itens extends Component {
