@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import API from '../../config/api'
+
+import Licitacao from './Licitacao'
 
 export default class Licitacoes extends Component {
   state = {
@@ -27,20 +28,17 @@ export default class Licitacoes extends Component {
 
     return (
       <div>
-        Licitacoes
-
         <div className="columns">
-          <div className="column is-2">Filtros</div>
-          <div className="column is-10">
-            <ul>
-              {licitacoes.map(licitacao => (
-                <li key={licitacao.id}>
-                  <Link to={`/itens/${licitacao.id}`}>
-                    {licitacao.objeto}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="column is-3">Filtros</div>
+          <div className="column is-9">
+            <button className="button is-small is-pulled-right">
+              <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
+            </button>
+            <h4 className="title is-4">Licitações</h4>
+
+            {licitacoes.map(licitacao => (
+              <Licitacao licitacao={licitacao} key={licitacao.id} />
+            ))}
           </div>
         </div>
       </div>
