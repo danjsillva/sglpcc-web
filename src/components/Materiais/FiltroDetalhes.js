@@ -15,6 +15,7 @@ export default class FiltroDetalhes extends Component {
     selectedFornecedorId: [],
     selectedFornecedorUf: [],
     params: {
+      margem: 10,
       licitacao: {
         data: ["2019-03-01", "2019-03-05"]
       },
@@ -90,19 +91,38 @@ export default class FiltroDetalhes extends Component {
     return (
       <div className="box">
         <div className="menu">
-          <span className="menu-label">Licitação</span>
+          {this.props.showPorcentagemMargem && (
+            <React.Fragment>
+              <div className="menu-label is-fullwidth">Margem</div>
+              <ul className="menu-list">
+                <li>
+                  <div className="field">
+                    <label>Porcentagem:</label>
+                    <div className="control">
+                      <input 
+                        type="text" 
+                        value={params.margem} 
+                        onChange={(e) => this.setState({ params: {...params, margem: e.target.value} })} 
+                        className="input is-small" />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              {/* <br /> */}
+            </React.Fragment>
+          )}
+          <div className="menu-label">Licitação</div>
           <ul className="menu-list">
             <li>
               <div className="field">
                 <label>Período:</label>
                 <div className="control">
-                  <input type="text" className="input is-smal" />
+                  <input type="text" className="input is-small" />
                 </div>
               </div>
             </li>
           </ul>
-          <br />
-          <span className="menu-label">Unidade</span>
+          <div className="menu-label">Unidade</div>
           <ul className="menu-list">
             <li>
               <div className="field">
@@ -113,6 +133,8 @@ export default class FiltroDetalhes extends Component {
                   options={this.state.unidades}
                   isMulti
                   isSearchable
+                  className="custom-select-container"
+                  classNamePrefix="custom-select"
                 />
               </div>
             </li>
@@ -129,8 +151,7 @@ export default class FiltroDetalhes extends Component {
               </div>
             </li>
           </ul>
-          <br />
-          <span className="menu-label"> Fornecedor </span>
+          <div className="menu-label"> Fornecedor </div>
           <ul className="menu-list">
             <li>
               <div className="field">
@@ -163,7 +184,7 @@ export default class FiltroDetalhes extends Component {
           <p>
             <button
               type="button"
-              className="button is-info is-fullwidth"
+              className="button is-link is-fullwidth"
               onClick={() => this.props.onFiltroFormSubmit(params)}>
               Aplicar filtro
               </button>

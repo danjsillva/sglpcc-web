@@ -9,6 +9,7 @@ export default class Itens extends Component {
   state = {
     material: {},
     params: {
+      margem: 10,
       licitacao: {
         data: ["2019-03-01", "2019-03-05"]
       },
@@ -49,7 +50,7 @@ export default class Itens extends Component {
       <div>
         <div className="columns">
           <div className="column is-4">
-            <FiltroDetalhes onFiltroFormSubmit={this.handleFiltroFormSubmit} />
+            <FiltroDetalhes showPorcentagemMargem={false} onFiltroFormSubmit={this.handleFiltroFormSubmit} />
           </div>
 
           <div className="column is-8">
@@ -69,7 +70,7 @@ export default class Itens extends Component {
               <div className="card-content">
                 <div className="columns">
                   <div className="column has-text-centered">
-                    <span className="title is-6"><i className="fa fa-sort has-text-info"></i> <Currency quantity={material.preco_avg || 0} currency="BRL" /></span><br />
+                    <span className="title is-6"><i className="fa fa-sort has-text-link"></i> <Currency quantity={material.preco_avg || 0} currency="BRL" /></span><br />
                     Média
                     </div>
                   <div className="column has-text-centered">
@@ -90,13 +91,13 @@ export default class Itens extends Component {
               <footer className="card-footer">
                 <p className="card-footer-item has-text-centered">
                   <span>
-                    <span className="title is-6"><i className="fa fa-folder has-text-info"></i> {material.total_quantidade}</span><br />
+                    <span className="title is-6"><i className="fa fa-folder has-text-link"></i> {material.total_quantidade}</span><br />
                     Quantidade de processos
                   </span>
                 </p>
                 <p className="card-footer-item has-text-centered">
                   <span>
-                    <span className="title is-6"><i className="fa fa-comments-dollar has-text-info"></i> <Currency quantity={material.total_preco || 0} currency="BRL" /></span><br />
+                    <span className="title is-6"><i className="fa fa-comments-dollar has-text-link"></i> <Currency quantity={material.total_preco || 0} currency="BRL" /></span><br />
                     Valor total
                   </span>
                 </p>

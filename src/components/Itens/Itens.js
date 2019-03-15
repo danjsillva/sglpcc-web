@@ -9,6 +9,7 @@ export default class Itens extends Component {
   state = {
     itens: [],
     params: {
+      margem: 10,
       licitacao: {
         data: ["2019-03-01", "2019-03-05"]
       },
@@ -21,7 +22,6 @@ export default class Itens extends Component {
         uf: []
       }
     },
-    porcentagemMargem: 10,
     showAvisos: true,
   }
 
@@ -44,15 +44,14 @@ export default class Itens extends Component {
     this.fetchItens(this.props.match.params.licitacoes_id)
   }
 
-
   render() {
-    const { itens, showAvisos, porcentagemMargem } = this.state
+    const { itens, showAvisos, params } = this.state
 
     return (
       <div>
         <div className="columns">
           <div className="column is-4">
-            <FiltroDetalhes onFiltroFormSubmit={this.handleFiltroFormSubmit} />
+            <FiltroDetalhes showPorcentagemMargem={true} onFiltroFormSubmit={this.handleFiltroFormSubmit} />
           </div>
 
           <div className="column is-8">
@@ -62,7 +61,7 @@ export default class Itens extends Component {
             <h4 className="title is-4">Itens da licitação</h4>
 
             {itens.map(item => (
-              <Item item={item} showAvisos={showAvisos} porcentagemMargem={porcentagemMargem} key={item.id} />
+              <Item item={item} showAvisos={showAvisos} porcentagemMargem={params.margem} key={item.id} />
             ))}
           </div>
         </div>

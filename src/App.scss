@@ -28,12 +28,24 @@ input {
   padding: 0;
 }
 
+.box {
+  padding: 10px;
+}
+
 .menu-label {
+  text-transform: none !important;
   font-family: inherit !important;
   font-weight: bold !important;
   color: inherit !important;
   letter-spacing: inherit !important;
-  line-height: 32px;
+  padding: 5px;
+  padding-left: 8px;
+  color: #3273dc !important;
+  border-left: solid 3px #3273dc;
+  background-color: #f6f9fe;
+  border-radius: 3px;
+  margin-top: 10px !important;
+  margin-bottom: 5px !important;
 }
 
 .grid-header {
@@ -49,9 +61,19 @@ input {
 }
 
 
-
-
-
+// .custom-select-container {
+//   font-size: .75rem;
+// }
+// .custom-select__control {
+//   height: 26px !important;
+//   min-height: 26px !important;
+//   border-radius: 2px !important;
+// }
+// .custom-select__value-container {
+//   padding: 0;
+//   margin: 0;
+//   border-radius: 2px;
+// }
 
 .loading-indicator:before {
   content: '';
