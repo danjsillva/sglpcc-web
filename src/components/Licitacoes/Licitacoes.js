@@ -39,8 +39,8 @@ export default class Licitacoes extends Component {
   }
 
   handleFiltroFormSubmit = async (params) => {
-    this.setState({ params })
-    this.fetchLicitacoes()
+    await this.setState({ params })
+    await this.fetchLicitacoes()
   }
 
   render() {

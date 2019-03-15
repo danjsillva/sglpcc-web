@@ -15,7 +15,7 @@ export default function Licitacao(props) {
         <span className="has-text-grey-light">Unidade: {licitacao.unidade.nome}</span>
         <br />
         Objeto: {licitacao.objeto}
-        <div className="card-content">
+        <div className="card-content pb-0">
           <div className="columns">
             <div className="column has-text-centered">
               <span className="title is-6">

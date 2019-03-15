@@ -39,8 +39,8 @@ export default class Itens extends Component {
   }
   
   handleFiltroFormSubmit = async (params) => {
-    this.setState({ params })
-    this.fetchDetalhes(this.props.match.params.id)
+    await this.setState({ params })
+    await this.fetchDetalhes(this.props.match.params.id)
   }
 
   render() {
