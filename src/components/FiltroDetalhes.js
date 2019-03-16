@@ -135,6 +135,8 @@ export default class FiltroDetalhes extends Component {
                   isSearchable
                   className="custom-select-container"
                   classNamePrefix="custom-select"
+                  placeholder=""
+                  noOptionsMessage={() => 'Nenhum resultado'}
                 />
               </div>
             </li>
@@ -147,6 +149,10 @@ export default class FiltroDetalhes extends Component {
                   options={this.state.estados}
                   isMulti
                   isSearchable
+                  className="custom-select-container"
+                  classNamePrefix="custom-select"
+                  placeholder=""
+                  noOptionsMessage={() => 'Nenhum resultado'}
                 />
               </div>
             </li>
@@ -162,6 +168,10 @@ export default class FiltroDetalhes extends Component {
                   options={this.state.fornecedores}
                   isMulti
                   isSearchable
+                  className="custom-select-container"
+                  classNamePrefix="custom-select"
+                  placeholder=""
+                  noOptionsMessage={() => 'Nenhum resultado'}
                 />
               </div>
             </li>
@@ -174,6 +184,10 @@ export default class FiltroDetalhes extends Component {
                   options={this.state.estados}
                   isMulti
                   isSearchable
+                  className="custom-select-container"
+                  classNamePrefix="custom-select"
+                  placeholder=""
+                  noOptionsMessage={() => 'Nenhum resultado'}
                 />
               </div>
             </li>
