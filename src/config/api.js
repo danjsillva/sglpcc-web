@@ -15,7 +15,7 @@ api.interceptors.request.use(async config => {
 })
 
 api.interceptors.response.use(async response => {
-  if (countLoadingIndicator == 1) {
+  if (countLoadingIndicator === 1) {
     document.body.classList.remove('loading-indicator')
   }
   

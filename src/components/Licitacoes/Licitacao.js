@@ -12,7 +12,7 @@ export default function Licitacao(props) {
         <span className="is-pulled-right">{licitacao.data.slice(0, 10)}</span>
         <span className="title is-6">{licitacao.processo}</span>
         <br />
-        <span className="has-text-grey-light">Unidade: {licitacao.unidade.nome}</span>
+        <span className="has-text-grey">Unidade: {licitacao.unidade.nome}</span>
         <br />
         Objeto: {licitacao.objeto}
         <div className="card-content pb-0">

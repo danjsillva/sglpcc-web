@@ -1,8 +1,10 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css');
 @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
-// @import '~css-spaces/dist/spaces.min.css';
 @import '~bulma-utilities/css/bulma-utilities.css';
 
+html {
+  background-color: #fafafa;
+}
 body {
   font-size: 14px;
   margin: 0;
@@ -30,6 +32,8 @@ input {
 
 .box {
   padding: 10px;
+  box-shadow: none !important;
+  border: 1px solid #dbdbdb;
 }
 
 .card-content {
@@ -69,7 +73,7 @@ input {
   font-size: .75rem;
 }
 .custom-select__control {
-  min-height: 28px !important;
+  min-height: 26px !important;
   border-radius: 2px !important;
   border-color: #dbdbdb !important;
 }
@@ -80,9 +84,19 @@ input {
   position: static !important;
   cursor: text;
 }
+.custom-select__indicator-separator {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+.custom-select__dropdown-indicator{
+  padding: 4px !important;
+}
 .custom-select__indicators {
-  height: 28px !important;
+  height: 26px !important;
   cursor: pointer !important;
+}
+.custom-select__multi-value__remove {
+  cursor: pointer;
 }
 
 .loading-indicator:before {
@@ -99,6 +113,7 @@ input {
 
 .loading-indicator:after {
   content: 'Carregando...';
+  font-weight: bold;
   position: fixed;
   width: 100%;
   top: 50%;

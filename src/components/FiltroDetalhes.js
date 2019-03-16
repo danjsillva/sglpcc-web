@@ -111,7 +111,7 @@ export default class FiltroDetalhes extends Component {
               {/* <br /> */}
             </React.Fragment>
           )}
-          <div className="menu-label">Licitação</div>
+          {/* <div className="menu-label">Licitação</div>
           <ul className="menu-list">
             <li>
               <div className="field">
@@ -121,7 +121,7 @@ export default class FiltroDetalhes extends Component {
                 </div>
               </div>
             </li>
-          </ul>
+          </ul> */}
           <div className="menu-label">Unidade</div>
           <ul className="menu-list">
             <li>
@@ -198,9 +198,9 @@ export default class FiltroDetalhes extends Component {
           <p>
             <button
               type="button"
-              className="button is-link is-fullwidth"
+              className="button is-link is-fullwidth is-small"
               onClick={() => this.props.onFiltroFormSubmit(params)}>
-              Aplicar filtro
+              <i className="fa fa-search mr-5"></i> Aplicar filtro
               </button>
           </p>
         </div>

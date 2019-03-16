@@ -35,7 +35,7 @@ export default class Topbar extends Component {
 
             <div className="navbar-end">
               <div className="navbar-item">
-                <a href="https://github.com/danjsillva" target="blank" className="link has-text-white"><i className="fa fa-code"></i> Contribua com o projeto no GitHub</a>
+                <a href="https://github.com/danjsillva" target="blank" className="link has-text-white"><i className="fa fa-code mr-5"></i> Contribua com o projeto no GitHub</a>
               </div>
             </div>
           </div></div>
