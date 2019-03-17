@@ -3,10 +3,12 @@ import React, { Component } from 'react'
 import API from '../../config/api'
 
 import FiltroDetalhes from '../FiltroDetalhes'
+import Licitacao from './../Licitacoes/Licitacao'
 import Item from './Item'
 
 export default class Itens extends Component {
   state = {
+    licitacao: {},
     itens: [],
     params: {
       margem: 10,
@@ -26,12 +28,23 @@ export default class Itens extends Component {
   }
 
   componentDidMount() {
+    this.fetchLicitacao(this.props.match.params.licitacoes_id)
     this.fetchItens(this.props.match.params.licitacoes_id)
+  }
+
+  fetchLicitacao = async (licitacoes_id) => {
+    try {
+      let licitacao = (await API.post(`/licitacoes/${licitacoes_id}`, this.state.params)).data
+
+      this.setState({ licitacao })
+    } catch (error) {
+
+    }
   }
 
   fetchItens = async (licitacoes_id) => {
     try {
-      let itens = (await API.post(`/itens/licitacao/${licitacoes_id}`, this.state.params)).data
+      let itens = (await API.post(`/licitacoes/itens/${licitacoes_id}`, this.state.params)).data
 
       this.setState({ itens })
     } catch (error) {
@@ -45,7 +58,7 @@ export default class Itens extends Component {
   }
 
   render() {
-    const { itens, showAvisos, params } = this.state
+    const { licitacao, itens, showAvisos, params } = this.state
 
     return (
       <div>
@@ -58,7 +71,11 @@ export default class Itens extends Component {
             <button className="button is-small is-pulled-right" onClick={() => this.setState({ showAvisos: !showAvisos })}>
               <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
             </button>
-            <h4 className="title is-4">Itens da licitação</h4>
+            <h4 className="title">Licitação</h4>
+
+            <Licitacao licitacao={licitacao} />
+
+            <h4 className="title is-5">Itens da licitação</h4>
 
             {itens.map(item => (
               <Item item={item} showAvisos={showAvisos} porcentagemMargem={params.margem} key={item.id} />

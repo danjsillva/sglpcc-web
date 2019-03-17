@@ -56,7 +56,7 @@ export default class Licitacoes extends Component {
             <button className="button is-small is-pulled-right">
               <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
             </button>
-            <h4 className="title is-4">Licitações</h4>
+            <h4 className="title">Licitações</h4>
 
             {licitacoes.map(licitacao => (
               <Licitacao licitacao={licitacao} key={licitacao.id} />

@@ -87,123 +87,86 @@ export default class FiltroDetalhes extends Component {
 
   render() {
     const { params } = this.state
+    const { showPorcentagemMargem } = this.props
 
     return (
-      <div className="box">
-        <div className="menu">
-          {this.props.showPorcentagemMargem && (
-            <React.Fragment>
-              <div className="menu-label is-fullwidth">Margem</div>
-              <ul className="menu-list">
-                <li>
-                  <div className="field">
-                    <label>Porcentagem:</label>
-                    <div className="control">
-                      <input 
-                        type="text" 
-                        value={params.margem} 
-                        onChange={(e) => this.setState({ params: {...params, margem: e.target.value} })} 
-                        className="input is-small" />
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              {/* <br /> */}
-            </React.Fragment>
-          )}
-          {/* <div className="menu-label">Licitação</div>
-          <ul className="menu-list">
-            <li>
-              <div className="field">
-                <label>Período:</label>
-                <div className="control">
-                  <input type="text" className="input is-small" />
-                </div>
-              </div>
-            </li>
-          </ul> */}
-          <div className="menu-label">Unidade</div>
-          <ul className="menu-list">
-            <li>
-              <div className="field">
-                <label>Unidade:</label>
-                <Select
-                  value={this.state.selectedUnidadeId}
-                  onChange={this.handleUnidadeIdChange}
-                  options={this.state.unidades}
-                  isMulti
-                  isSearchable
-                  className="custom-select-container"
-                  classNamePrefix="custom-select"
-                  placeholder=""
-                  noOptionsMessage={() => 'Nenhum resultado'}
-                />
-              </div>
-            </li>
-            <li>
-              <div className="field">
-                <label>UF:</label>
-                <Select
-                  value={this.state.selectedUnidadeUf}
-                  onChange={this.handleUnidadeUfChange}
-                  options={this.state.estados}
-                  isMulti
-                  isSearchable
-                  className="custom-select-container"
-                  classNamePrefix="custom-select"
-                  placeholder=""
-                  noOptionsMessage={() => 'Nenhum resultado'}
-                />
-              </div>
-            </li>
-          </ul>
-          <div className="menu-label"> Fornecedor </div>
-          <ul className="menu-list">
-            <li>
-              <div className="field">
-                <label>Razão social:</label>
-                <Select
-                  value={this.state.selectedFornecedorId}
-                  onChange={this.handleFornecedorIdChange}
-                  options={this.state.fornecedores}
-                  isMulti
-                  isSearchable
-                  className="custom-select-container"
-                  classNamePrefix="custom-select"
-                  placeholder=""
-                  noOptionsMessage={() => 'Nenhum resultado'}
-                />
-              </div>
-            </li>
-            <li>
-              <div className="field">
-                <label>UF:</label>
-                <Select
-                  value={this.state.selectedFornecedorUf}
-                  onChange={this.handleFornecedorUfChange}
-                  options={this.state.estados}
-                  isMulti
-                  isSearchable
-                  className="custom-select-container"
-                  classNamePrefix="custom-select"
-                  placeholder=""
-                  noOptionsMessage={() => 'Nenhum resultado'}
-                />
-              </div>
-            </li>
-          </ul>
+      <div className="">
+        <h4 className="title is-5 mb-10">Busca e filtros</h4>
 
-          <br />
+        {showPorcentagemMargem && (
+          <React.Fragment>
+            <div className="field">
+              <label>Margem</label>
+              <div className="control">
+                <input
+                  type="text"
+                  value={params.margem}
+                  onChange={(e) => this.setState({ params: { ...params, margem: e.target.value } })}
+                  placeholder="Porcentagem"
+                  className="input is-small" />
+              </div>
+            </div>
+          </React.Fragment>
+        )}
 
-          <p>
-            <button
-              type="button"
-              className="button is-link is-fullwidth is-small"
-              onClick={() => this.props.onFiltroFormSubmit(params)}>
-              <i className="fa fa-search mr-5"></i> Aplicar filtro
-              </button>
-          </p>
+        <div className="field mb-0">
+          <label>Unidades</label>
+          <Select
+            value={this.state.selectedUnidadeId}
+            onChange={this.handleUnidadeIdChange}
+            options={this.state.unidades}
+            isMulti
+            isSearchable
+            className="custom-select-container mb-10"
+            classNamePrefix="custom-select"
+            placeholder="Unidade"
+            noOptionsMessage={() => 'Nenhum resultado'}
+          />
+          <Select
+            value={this.state.selectedUnidadeUf}
+            onChange={this.handleUnidadeUfChange}
+            options={this.state.estados}
+            isMulti
+            isSearchable
+            className="custom-select-container mb-10"
+            classNamePrefix="custom-select"
+            placeholder="UF"
+            noOptionsMessage={() => 'Nenhum resultado'}
+          />
         </div>
+
+        <div className="field mb-0">
+          <label>Fornecedores</label>
+          <Select
+            value={this.state.selectedFornecedorId}
+            onChange={this.handleFornecedorIdChange}
+            options={this.state.fornecedores}
+            isMulti
+            isSearchable
+            className="custom-select-container mb-10"
+            classNamePrefix="custom-select"
+            placeholder="Fornecedores"
+            noOptionsMessage={() => 'Nenhum resultado'}
+          />
+          <Select
+            value={this.state.selectedFornecedorUf}
+            onChange={this.handleFornecedorUfChange}
+            options={this.state.estados}
+            isMulti
+            isSearchable
+            className="custom-select-container mb-10"
+            classNamePrefix="custom-select"
+            placeholder="UF"
+            noOptionsMessage={() => 'Nenhum resultado'}
+          />
+        </div>
+
+        <button
+          type="button"
+          className="button is-link is-fullwidt is-small mt-10"
+          onClick={() => this.props.onFiltroFormSubmit(params)}>
+          <i className="fa fa-search mr-5"></i> Aplicar filtro
+        </button>
       </div>
     )
   }

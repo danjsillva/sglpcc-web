@@ -9,9 +9,9 @@ import Materiais from './components/Materiais/Materiais'
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/licitacoes" component={Licitacoes} />
-    <Route path="/itens/:licitacoes_id" component={Itens} />
-    <Route path="/materiais/:id" component={Materiais} />
+    <Route path="/licitacoes" exact component={Licitacoes} />
+    <Route path="/licitacoes/:licitacoes_id" exact component={Itens} />
+    <Route path="/materiais/:id" exact component={Materiais} />
   </Switch>
 )
 
