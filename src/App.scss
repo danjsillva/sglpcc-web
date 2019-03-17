@@ -106,8 +106,8 @@ input {
   cursor: pointer;
 }
 
-.recharts-text {
-  font-size: 70%;
+.recharts-text, .recharts-legend-item-text {
+  font-size: 60%;
 }
 
 .loading-indicator:before {

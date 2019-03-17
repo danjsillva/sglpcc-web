@@ -19,7 +19,7 @@ export default function Licitacao(props) {
       <div className="columns mt-5 mb-0">
         <div className="column has-text-centered">
           <span className="title is-6">
-            <i className={classNames("fa", { 'fa-thumbs-up has-text-success': true })}></i> <Currency quantity={licitacao.itens ? licitacao.itens.reduce((a, b) => a + b.preco, 0) : 0} currency="BRL" />
+            <i className={classNames("fa", { 'fa-thumbs-up has-text-success': true })}></i> <Currency quantity={licitacao.itens ? licitacao.itens.reduce((a, b) => a + (b.preco * b.quantidade), 0) : 0} currency="BRL" />
           </span>
           <br />
           Valor total da licitação

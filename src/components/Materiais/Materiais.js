@@ -35,7 +35,6 @@ export default class Itens extends Component {
       let material = (await API.post(`/materiais/detalhes/${materiais_id}`, this.state.params)).data
 
       let data_chart = [{
-        // name: 'Teste',
         avg1: material.preco_avg,
         avg2: (material.preco_min + material.preco_max) / 2,
         min: material.preco_min,
@@ -74,7 +73,7 @@ export default class Itens extends Component {
               <span className="tag is-rounded is-success">Sustentável</span>
             </div>
 
-            <article class="message is-smal">
+            <article class="message is-dark is-smal">
               <div class="message-header">
                 <small>Análise de preços nos processos de compras</small>
               </div>
@@ -100,19 +99,21 @@ export default class Itens extends Component {
               </div>
             </article>
 
-
-
             <div class="columns">
               <div class="column">
-                <article class="message is-smal">
+                <article class="message is-dark is-smal">
                   <div class="message-header">
-                    <small>Processos de compras</small>
+                    <small>Processos de compra</small>
                   </div>
                   <div class="message-body">
+                    <div className="column has-text-centered">
+                      <span className="title is-6"><i className="fa fa-folder has-text-link"></i> {material.total_processos}</span><br />
+                      Processos de compra
+                    </div>
                     <div className="columns mt-5 mb-0">
                       <div className="column has-text-centered">
-                        <span className="title is-6"><i className="fa fa-folder has-text-link"></i> {material.total_quantidade}</span><br />
-                        Quantidade
+                        <span className="title is-6"><i className="fa fa-th has-text-link"></i> {material.total_quantidade || 0}</span><br />
+                        Quantidade total
                       </div>
                       <div className="column has-text-centered">
                         <span className="title is-6"><i className="fa fa-comments-dollar has-text-link"></i> <Currency quantity={material.total_preco || 0} currency="BRL" /></span><br />
@@ -124,7 +125,7 @@ export default class Itens extends Component {
               </div>
 
               <div class="column">
-                <article class="message is-smal">
+                <article class="message is-dark is-smal">
                   <div class="message-header">
                     <small>Valores em gráfico</small>
                   </div>
@@ -138,15 +139,14 @@ export default class Itens extends Component {
                         <YAxis />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="avg1" name="Média" barSize={50} fill="hsl(217, 71%, 53%)" />
-                        <Bar dataKey="avg2" name="Mediana" barSize={50} fill="hsl(48, 100%, 67%)" />
-                        <Bar dataKey="min" name="Menor preço" barSize={50} fill="hsl(141, 71%, 48%)" />
-                        <Bar dataKey="max" name="Maior preço" barSize={50} fill="hsl(348, 100%, 61%)" />
+                        <Bar dataKey="avg1" name="Média" barSize={30} fill="hsl(217, 71%, 53%)" />
+                        <Bar dataKey="avg2" name="Mediana" barSize={30} fill="hsl(48, 100%, 67%)" />
+                        <Bar dataKey="min" name="Menor preço" barSize={30} fill="hsl(141, 71%, 48%)" />
+                        <Bar dataKey="max" name="Maior preço" barSize={30} fill="hsl(348, 100%, 61%)" />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
                 </article>
-
               </div>
             </div>
           </div>
