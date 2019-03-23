@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ResponsiveContainer, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import Currency from 'react-currency-formatter'
 
 import API from '../../config/api'

@@ -38,7 +38,7 @@ export default function Item(props) {
             </div>
       </div>
 
-      {showAvisos && item.preco <= item.preco_avg && (
+      {showAvisos && item.preco < item.preco_avg && (
         <div className="message is-small is-success">
           <div className="message-body">
             O preço deste item está {(100 - (item.preco * 100 / item.preco_avg)).toFixed(1)}% abaixo do preço médio praticado: <Currency quantity={item.preco_avg} currency="BRL" />
