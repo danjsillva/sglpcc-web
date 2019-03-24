@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import API from '../../config/api'
 
@@ -6,83 +6,74 @@ import FiltroDetalhes from '../FiltroDetalhes'
 import Licitacao from './../Licitacoes/Licitacao'
 import Item from './Item'
 
-export default class Itens extends Component {
-  state = {
-    licitacao: {},
-    itens: [],
-    params: {
-      margem: 10,
-      licitacao: {
-        data: ["2019-03-01", "2019-03-05"]
-      },
-      unidade: {
-        id: [],
-        uf: []
-      },
-      fornecedor: {
-        id: [],
-        uf: []
-      }
+export default function Itens(props) {
+  const [licitacao, setLicitacao] = useState({})
+  const [itens, setItens] = useState([])
+  const [params, setParams] = useState({
+    margem: 10,
+    licitacao: {
+      data: ["2019-03-01", "2019-03-05"]
     },
-    showAvisos: true,
-  }
+    unidade: {
+      id: [],
+      uf: []
+    },
+    fornecedor: {
+      id: [],
+      uf: []
+    }
+  })
+  const [showAvisos, setShowAvisos] = useState(true)
 
-  componentDidMount() {
-    this.fetchLicitacao(this.props.match.params.licitacoes_id)
-    this.fetchItens(this.props.match.params.licitacoes_id)
-  }
+  useEffect(() => {    
+    fetchLicitacao(props.match.params.licitacoes_id)
+    fetchItens(props.match.params.licitacoes_id)
+  }, [params])
 
-  fetchLicitacao = async (licitacoes_id) => {
+  const fetchLicitacao = async (licitacoes_id) => {
     try {
-      let licitacao = (await API.post(`/licitacoes/${licitacoes_id}`, this.state.params)).data
+      let licitacao = (await API.post(`/licitacoes/${licitacoes_id}`, params)).data
 
-      this.setState({ licitacao })
+      setLicitacao(licitacao)
     } catch (error) {
 
     }
   }
 
-  fetchItens = async (licitacoes_id) => {
+  const fetchItens = async (licitacoes_id) => {
     try {
-      let itens = (await API.post(`/licitacoes/itens/${licitacoes_id}`, this.state.params)).data
+      let itens = (await API.post(`/licitacoes/itens/${licitacoes_id}`, params)).data
 
-      this.setState({ itens })
+      setItens(itens)
     } catch (error) {
 
     }
   }
 
-  handleFiltroFormSubmit = async (params) => {
-    await this.setState({ params })
-    await this.fetchItens(this.props.match.params.licitacoes_id)
+  const handleFiltroFormSubmit = (params) => {
+    setParams(params)
   }
 
-  render() {
-    const { licitacao, itens, showAvisos, params } = this.state
+  return (
+    <div className="columns">
+      <div className="column is-3">
+        <FiltroDetalhes showPorcentagemMargem={true} onFiltroFormSubmit={handleFiltroFormSubmit} />
+      </div>
 
-    return (
-      <div>
-        <div className="columns">
-          <div className="column is-3">
-            <FiltroDetalhes showPorcentagemMargem={true} onFiltroFormSubmit={this.handleFiltroFormSubmit} />
-          </div>
-
-          <div className="column is-9">
-            <button className="button is-small is-pulled-right" onClick={() => this.setState({ showAvisos: !showAvisos })}>
-              <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
+      <div className="column is-9">
+        <button className="button is-small is-pulled-right" onClick={() => setShowAvisos(!showAvisos)}>
+          <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
             </button>
-            <h4 className="title">Licitação</h4>
+        <h4 className="title">Licitação</h4>
 
-            <Licitacao licitacao={licitacao} />
+        <Licitacao licitacao={licitacao} />
 
-            <h4 className="title is-5">Itens da licitação</h4>
+        <h4 className="title is-5">Itens da licitação</h4>
 
-            {itens.map(item => (
-              <Item item={item} showAvisos={showAvisos} porcentagemMargem={params.margem} key={item.id} />
-            ))}
-          </div>
-        </div>
-      </div >
-    )
-  }
+        {itens.map(item => (
+          <Item item={item} showAvisos={showAvisos} porcentagemMargem={params.margem} key={item.id} />
+        ))}
+      </div>
+    </div>
+  )
 }

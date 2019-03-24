@@ -10,13 +10,13 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <React.Fragment>
+        <>
           <Topbar /><br />
           <div className="container">
 
             <Routes />
           </div>
-        </React.Fragment>
+        </>
       </BrowserRouter>
     );
   }
