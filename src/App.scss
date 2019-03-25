@@ -33,19 +33,17 @@ input {
   font-weight: bold;
 }
 
-.columns {
-  padding: 0;
+
+.navbar .navbar-item {
+  font-weight: bold;
+  // background-image: linear-gradient(30deg, #0575E6, rgb(17, 65, 170))
 }
 
-.box {
-  padding: 10px;
-  box-shadow: none !important;
-  border: 1px solid #dbdbdb;
-}
 
-.card-content {
-  padding: 10px;
-}
+
+
+
+
 
 .menu-label {
   text-transform: none !important;
@@ -113,7 +111,7 @@ input {
 .loading-indicator:before {
   content: '';
   background-color: #fff;
-  // opacity: 0.9;
+  opacity: 0.9;
   position: fixed;
   width: 100%;
   height: 100%;

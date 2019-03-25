@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 export default class Topbar extends Component {
   render() {
     return (
-      <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-link" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
             {/* <span className="navbar-item">
@@ -12,12 +12,23 @@ export default class Topbar extends Component {
                 <i className="fa fa-chart-pie has-text-grey-light"></i>
               </span>
             </span> */}
-            <span className="navbar-item">
+            {/* <span className="navbar-item">
               <NavLink to="/licitacoes">
-                {/* <img src="https://bulma.io/images/bulma-logo.png" alt="logo" width="112" height="28" /> */}
                 <div className="title is-6 has-text-white mb-0">Sistema de Gestão em Licitações Públicas</div>
                 <span className="subtitle is-7 has-text-grey-light">com foco no Combate à Corrupção</span>
               </NavLink>
+            </span> */}
+            <span className="navbar-item">
+              <NavLink to="/" className="link has-text-white">Home</NavLink>
+            </span>
+            <span className="navbar-item">
+              <NavLink to="/licitacoes" className="link has-text-white">Licitações</NavLink>
+            </span>
+            <span className="navbar-item">
+              <NavLink to="/materiais" className="link has-text-white">Materiais</NavLink>
+            </span>
+            <span className="navbar-item">
+              <NavLink to="/servicos" className="link has-text-white">Serviços</NavLink>
             </span>
 
             <span role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

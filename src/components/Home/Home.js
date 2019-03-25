@@ -1,9 +1,97 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
+import ImagePageLicitacoes from '../../assets/page-licitacoes.png'
+import ImagePageMateriais from '../../assets/page-materiais.png'
 
 export default function Home() {
   return (
     <>
-      Home
+      <div className="has-background-link m-0">
+        <div className="container pt-25 pb-25">
+          <div className="columns">
+            <div className="column is-8">
+              <h1 className="title is-1 has-text-white">Sistema de Gestão em Licitações Públicas</h1>
+              <h2 className="subtitle is-5 has-text-white">Com foco no combate à corrupção</h2>
+            </div>
+            <div className="column is-4">
+              <h1 className="title has-text-white"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container pt-25">
+        <h1 className="title">Bem-vindo!</h1>
+        <h2 className="subtitle is-5">Você pode começar pesquisando as licitações de uma unidade ou consultar a análise de preços um material ou serviço.</h2>
+
+        <div className="columns">
+          <div className="column">
+            <Link to="/licitacoes">
+              <div className="box has-text-centered">
+                <i className="fa fa-folder-open fa-2x has-text-link"></i>
+                <h3 className="title is-5 mt-15">Licitações</h3>
+              </div>
+            </Link>
+          </div>
+          <div className="column">
+            <Link to="/materiais">
+              <div className="box has-text-centered">
+                <i className="fa fa-box fa-2x has-text-link"></i>
+                <h3 className="title is-5 mt-15">Materiais</h3>
+              </div>
+            </Link>
+          </div>
+          <div className="column">
+            <Link to="/servicos">
+              <div className="box has-text-centered">
+                <i className="fa fa-tools fa-2x has-text-link"></i>
+                <h3 className="title is-5 mt-15">Serviços</h3>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="has-background-light mt-50">
+        <div className="container pt-25">
+          <div className="columns">
+            <div className="column is-4 has-text-right">
+              <h1 className="title is-4 mt-100">Análise dos preços praticados nos itens da licitação</h1>
+              <h3 className="subtitle">Compare o preço de cada item com a média praticada nos processos de compra. Filtre por unidade, estado ou fornecedor para refinar os resultados.</h3>
+            </div>
+            <div className="column is-8">
+              <img src={ImagePageLicitacoes} alt="Página de licitações" className="pb-0" />
+            </div>
+          </div>
+        </div>
+
+        <div className="container pt-25 mt-25">
+          <div className="columns">
+            <div className="column is-8">
+              <img src={ImagePageMateriais} alt="Página de licitações" className="pb-0" />
+            </div>
+            <div className="column is-4">
+              <h1 className="title is-4 mt-100">Análise de preços do material nos processos de compra</h1>
+              <h3 className="subtitle">Menor preço, maior preço, gráficos entre outros detalhes. Filtre por unidade, estado ou fornecedor para refinar os resultados.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="has-background-link m-0">
+        <div className="container pt-25 pb-25">
+          <div className="columns">
+            <div className="column is-8">
+              <h1 className="title is- has-text-white">Sistema de Gestão em Licitações Públicas</h1>
+              <h2 className="subtitle is-5 has-text-white">Com foco no combate à corrupção</h2>
+            </div>
+            <div className="column is-4">
+              <h1 className="title has-text-white"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

@@ -41,7 +41,8 @@ export default function Licitacoes(props) {
   }
 
   return (
-    <div className="columns">
+    <div className="container mt-25">
+      <div className="columns">
       <div className="column is-3">
         <FiltroDetalhes showPorcentagemMargem={false} onFiltroFormSubmit={handleFiltroFormSubmit} />
       </div>
@@ -55,6 +56,7 @@ export default function Licitacoes(props) {
           <Licitacao licitacao={licitacao} key={licitacao.id} />
         ))}
       </div>
+    </div>
     </div>
   )
 }

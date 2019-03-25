@@ -25,7 +25,7 @@ export default function Itens(props) {
   })
   const [showAvisos, setShowAvisos] = useState(true)
 
-  useEffect(() => {    
+  useEffect(() => {
     fetchLicitacao(props.match.params.licitacoes_id)
     fetchItens(props.match.params.licitacoes_id)
   }, [params])
@@ -55,24 +55,26 @@ export default function Itens(props) {
   }
 
   return (
-    <div className="columns">
-      <div className="column is-3">
-        <FiltroDetalhes showPorcentagemMargem={true} onFiltroFormSubmit={handleFiltroFormSubmit} />
-      </div>
+    <div className="container mt-25">
+      <div className="columns">
+        <div className="column is-3">
+          <FiltroDetalhes showPorcentagemMargem={true} onFiltroFormSubmit={handleFiltroFormSubmit} />
+        </div>
 
-      <div className="column is-9">
-        <button className="button is-small is-pulled-right" onClick={() => setShowAvisos(!showAvisos)}>
-          <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
+        <div className="column is-9">
+          <button className="button is-small is-pulled-right" onClick={() => setShowAvisos(!showAvisos)}>
+            <i className="fa fa-eye"></i>&nbsp; Mostrar/Ocultar avisos
             </button>
-        <h4 className="title">Licitação</h4>
+          <h4 className="title">Licitação</h4>
 
-        <Licitacao licitacao={licitacao} />
+          <Licitacao licitacao={licitacao} />
 
-        <h4 className="title is-5">Itens da licitação</h4>
+          <h4 className="title is-5">Itens da licitação</h4>
 
-        {itens.map(item => (
-          <Item item={item} showAvisos={showAvisos} porcentagemMargem={params.margem} key={item.id} />
-        ))}
+          {itens.map(item => (
+            <Item item={item} showAvisos={showAvisos} porcentagemMargem={params.margem} key={item.id} />
+          ))}
+        </div>
       </div>
     </div>
   )

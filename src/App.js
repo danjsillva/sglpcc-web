@@ -11,11 +11,11 @@ class App extends Component {
     return (
       <BrowserRouter>
         <>
-          <Topbar /><br />
-          <div className="container">
+          <Topbar />
+          {/* <div className="container"> */}
 
             <Routes />
-          </div>
+          {/* </div> */}
         </>
       </BrowserRouter>
     );
