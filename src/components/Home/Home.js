@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import GitHubButton from 'react-github-btn'
 
 import ImagePageLicitacoes from '../../assets/page-licitacoes.png'
 import ImagePageMateriais from '../../assets/page-materiais.png'
@@ -14,8 +15,16 @@ export default function Home() {
               <h1 className="title is-1 has-text-white">Sistema de Gestão em Licitações Públicas</h1>
               <h2 className="subtitle is-5 has-text-white">Com foco no combate à corrupção</h2>
             </div>
-            <div className="column is-4 has-text-right" style={{marginTop: 'auto'}}>
-              <Link to="/sobre" className="button is-link is-inverted is-outlined is-rounded is-medium">Saiba mais sobre o projeto</Link>
+            <div className="column is-4 has-text-right" style={{ marginTop: 'auto' }}>
+              <GitHubButton
+                href="https://github.com/danjsillva/sglpcc-web"
+                data-icon="octicon-star"
+                data-show-count="true"
+                aria-label="Star danjsillva/sglpcc-web on GitHub"
+              >
+                Star
+              </GitHubButton>
+              <Link to="/sobre" className="button is-link is-inverted is-outline is-rounded is-medium mt-10">Saiba mais sobre o projeto</Link>
             </div>
           </div>
         </div>
