@@ -31,7 +31,7 @@ export default function Home() {
               <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card">
                 <div className="columns">
                   <div className="column is-2">
-                    <i className="fa fa-folder-open fa-2x has-text-link d-block"></i>
+                    <i className="fa fa-folder-open fa-2x has-text-success d-block"></i>
                   </div>
                   <div className="column">
                     <h4 className="title is-5 mb-10">Licitações</h4>
@@ -46,7 +46,7 @@ export default function Home() {
               <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card">
                 <div className="columns">
                   <div className="column is-2">
-                    <i className="fa fa-box fa-2x has-text-link d-block"></i>
+                    <i className="fa fa-box fa-2x has-text-danger d-block"></i>
                   </div>
                   <div className="column">
                     <h4 className="title is-5 mb-10">Materiais</h4>
@@ -61,7 +61,7 @@ export default function Home() {
               <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card">
                 <div className="columns">
                   <div className="column is-2">
-                    <i className="fa fa-tools fa-2x has-text-link d-block"></i>
+                    <i className="fa fa-tools fa-2x has-text-warning d-block"></i>
                   </div>
                   <div className="column">
                     <h4 className="title is-5 mb-10">Serviços</h4>
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="has-background-link m-0">
+      <div className="has-background-dark m-0">
         <div className="container pt-25 pb-25">
           <div className="columns">
             <div className="column is-8">

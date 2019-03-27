@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 export default class Topbar extends Component {
   render() {
     return (
-      <nav className="navbar is-link" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-fixed-top is-link" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
             {/* <span className="navbar-item">
@@ -46,7 +46,7 @@ export default class Topbar extends Component {
             <div className="navbar-end">
               <div className="navbar-item">
                 {/* <a href="https://github.com/danjsillva" target="blank" className="link has-text-white"><i className="fa fa-code mr-5"></i> Contribua com o projeto no GitHub</a> */}
-                <NavLink to="/sobre" className="link has-text-white">Sobre o projeto</NavLink>
+                <NavLink to="/sobre" className="button is-link is-inverted is-outlined is-rounded is-small">Sobre o projeto</NavLink>
               </div>
             </div>
           </div></div>
