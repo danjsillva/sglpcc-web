@@ -82,7 +82,7 @@ export default function Home() {
               <h3 className="subtitle">Compare o preço de cada item com a média praticada nos processos de compra. Filtre por unidade, estado ou fornecedor para refinar os resultados.</h3>
             </div>
             <div className="column is-8">
-              <img src={ImagePageLicitacoes} alt="Página de licitações" className="pb-0" />
+              <img src={ImagePageLicitacoes} alt="Página de licitações" className="custom-home-image pb-0" />
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function Home() {
         <div className="container mt-50">
           <div className="columns">
             <div className="column is-8">
-              <img src={ImagePageMateriais} alt="Página de licitações" className="pb-0" />
+              <img src={ImagePageMateriais} alt="Página de licitações" className="custom-home-image pb-0" />
             </div>
             <div className="column is-4">
               <h1 className="title is-4 mt-100">Análise de preços do material nos processos de compra</h1>

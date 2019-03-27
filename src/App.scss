@@ -87,6 +87,13 @@ box-shadow: 0px 0px 10px 0px rgba(238,238,238,1);
 box-shadow: 0px 0px 15px 0px rgba(204,204,204,1);
 }
 
+.custom-home-image {
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}  
+.custom-home-image:hover {
+  transform: scale(1.01);
+}
 
 .custom-select-container {
   font-size: .75rem;
