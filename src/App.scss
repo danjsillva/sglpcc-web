@@ -74,6 +74,20 @@ input {
 }
 
 
+.custom-home-card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(238,238,238,1);
+-moz-box-shadow: 0px 0px 10px 0px rgba(238,238,238,1);
+box-shadow: 0px 0px 10px 0px rgba(238,238,238,1);
+}
+.custom-home-card:hover {
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(204,204,204,1);
+-moz-box-shadow: 0px 0px 15px 0px rgba(204,204,204,1);
+box-shadow: 0px 0px 15px 0px rgba(204,204,204,1);
+}
+
+
 .custom-select-container {
   font-size: .75rem;
 }
