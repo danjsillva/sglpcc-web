@@ -14,8 +14,8 @@ export default function Home() {
               <h1 className="title is-1 has-text-white">Sistema de Gestão em Licitações Públicas</h1>
               <h2 className="subtitle is-5 has-text-white">Com foco no combate à corrupção</h2>
             </div>
-            <div className="column is-4">
-              <h1 className="title has-text-white"></h1>
+            <div className="column is-4 has-text-right" style={{marginTop: 'auto'}}>
+              <Link to="/sobre" className="button is-link is-inverted is-outlined is-rounded is-medium">Saiba mais sobre o projeto</Link>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
         <div className="columns mt-25">
           <div className="column">
             <Link to="/licitacoes">
-              <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card">
+              <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card custom-home-image">
                 <div className="columns">
                   <div className="column is-2">
                     <i className="fa fa-folder-open fa-2x has-text-success d-block"></i>
@@ -43,7 +43,7 @@ export default function Home() {
           </div>
           <div className="column">
             <Link to="/materiais">
-              <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card">
+              <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card custom-home-image">
                 <div className="columns">
                   <div className="column is-2">
                     <i className="fa fa-box fa-2x has-text-danger d-block"></i>
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
           <div className="column">
             <Link to="/servicos">
-              <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card">
+              <div className="has-background-ligh pt-20 pb-20 pl-20 pr-20 custom-home-card custom-home-image">
                 <div className="columns">
                   <div className="column is-2">
                     <i className="fa fa-tools fa-2x has-text-warning d-block"></i>

@@ -46,7 +46,10 @@ export default class Topbar extends Component {
             <div className="navbar-end">
               <div className="navbar-item">
                 {/* <a href="https://github.com/danjsillva" target="blank" className="link has-text-white"><i className="fa fa-code mr-5"></i> Contribua com o projeto no GitHub</a> */}
-                <NavLink to="/sobre" className="button is-link is-inverted is-outlined is-rounded is-small">Sobre o projeto</NavLink>
+                <NavLink to="/faq" className="link has-text-white">Perguntas frequentes</NavLink>
+              </div>
+              <div className="navbar-item">
+                <NavLink to="/contato" className="link has-text-white">Contato</NavLink>
               </div>
             </div>
           </div></div>
