@@ -12,6 +12,7 @@ export default function Itens(props) {
   const [params, setParams] = useState({
     margem: 10,
     licitacao: {
+      numero: 0,
       data: ["2019-03-01", "2019-03-05"]
     },
     unidade: {
@@ -55,7 +56,7 @@ export default function Itens(props) {
     <div className="container mt-25">
       <div className="columns">
         <div className="column is-3">
-          <FiltroDetalhes showPorcentagemMargem={false} onFiltroFormSubmit={handleFiltroFormSubmit} />
+          <FiltroDetalhes showPorcentagemMargem={false} showLicitacaoData={true} onFiltroFormSubmit={handleFiltroFormSubmit} />
         </div>
 
         <div className="column is-9">
@@ -69,7 +70,7 @@ export default function Itens(props) {
             <span className="tag is-rounded is-success">Sustentável</span>
           </div>
 
-          <article className="message is-link is-smal">
+          <article className="message is-light is-smal">
             <div className="message-header">
               <small>Análise de preços nos processos de compras</small>
             </div>
@@ -97,7 +98,7 @@ export default function Itens(props) {
 
           <div className="columns">
             <div className="column">
-              <article className="message is-link is-smal">
+              <article className="message is-light is-smal">
                 <div className="message-header">
                   <small>Processos de compra</small>
                 </div>
@@ -121,7 +122,7 @@ export default function Itens(props) {
             </div>
 
             <div className="column">
-              <article className="message is-link is-smal">
+              <article className="message is-light is-smal">
                 <div className="message-header">
                   <small>Valores em gráfico</small>
                 </div>

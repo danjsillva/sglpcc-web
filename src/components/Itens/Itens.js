@@ -12,6 +12,7 @@ export default function Itens(props) {
   const [params, setParams] = useState({
     margem: 10,
     licitacao: {
+      numero: 0,
       data: ["2019-03-01", "2019-03-05"]
     },
     unidade: {
@@ -58,7 +59,7 @@ export default function Itens(props) {
     <div className="container mt-25">
       <div className="columns">
         <div className="column is-3">
-          <FiltroDetalhes showPorcentagemMargem={true} onFiltroFormSubmit={handleFiltroFormSubmit} />
+          <FiltroDetalhes showPorcentagemMargem={true} showLicitacaoData={true} onFiltroFormSubmit={handleFiltroFormSubmit} />
         </div>
 
         <div className="column is-9">
