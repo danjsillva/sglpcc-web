@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 import './App.scss';
 
@@ -9,7 +9,7 @@ import Routes from './Routes'
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <>
           <Topbar />
           {/* <div className="container"> */}
@@ -17,7 +17,7 @@ class App extends Component {
             <Routes />
           {/* </div> */}
         </>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
