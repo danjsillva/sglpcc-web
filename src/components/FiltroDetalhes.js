@@ -16,7 +16,7 @@ export default function FiltroDetalhes(props) {
     margem: 10,
     licitacao: {
       numero: 0,
-      data: ["2019-03-01", "2019-03-05"]
+      data: ["2019-01-01", "2019-12-31"]
     },
     unidade: {
       id: [],
@@ -112,7 +112,7 @@ export default function FiltroDetalhes(props) {
             <input
               type="text"
               value={params.licitacao.numero}
-              onChange={(e) => setParams({ ...params, licitacao: { ...params.licitacao, numero: e.target.value} })}
+              onChange={(e) => setParams({ ...params, licitacao: { ...params.licitacao, numero: e.target.value } })}
               placeholder="Porcentagem"
               className="input is-small" />
           </div>
@@ -126,7 +126,7 @@ export default function FiltroDetalhes(props) {
             <input
               type="text"
               value={params.licitacao.data}
-              onChange={(e) => setParams({ ...params, licitacao: { ...params.licitacao, data: e.target.value} })}
+              onChange={(e) => setParams({ ...params, licitacao: { ...params.licitacao, data: e.target.value } })}
               placeholder="Porcentagem"
               className="input is-small" />
           </div>

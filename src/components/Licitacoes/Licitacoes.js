@@ -11,7 +11,7 @@ export default function Licitacoes(props) {
     margem: 10,
     licitacao: {
       numero: 0,
-      data: ["2019-03-01", "2019-03-05"]
+      data: ["2019-01-01", "2019-12-31"]
     },
     unidade: {
       id: [],
